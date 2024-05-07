@@ -9,8 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 		features="src/test/java/cucumberSpec/features",
 		glue="cucumberSpec.StepDefinitions",
 		plugin= {"pretty","html:testResults/results.html"},
-		tags="@login"
-		)
+		publish=true)
+		
 
 
 public class TestRunner {
