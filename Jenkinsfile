@@ -2,23 +2,31 @@ pipeline {
     agent any
    
     stages {
-        stage('Starting') {
+          stage('Checkout') {
             steps {
-                echo 'Started pipeline'
+                
+                checkout scm
             }
         }
        
-        stage('build'){
+        stage('Build'){
             steps{
                 bat 'mvn clean install'
             }
         }
         
-        stage('test'){
+        stage('Test'){
             steps{
                 bat 'mvn test'
             }
         }
+         stage('Clean Up') {
+            steps {
+              
+                bat 'rmdir /s /q target'
+            }
+        }
+    }
       
     }
-}
+
