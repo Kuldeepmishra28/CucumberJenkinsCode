@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.9.1"},"runtime":{"name":"OpenJDK 64-Bit Server VM","version":"17.0.7+7"},"os":{"name":"Windows 11"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1715078018","nanos":648409200}}},{"source":{"uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/DeliveryLocationFeature.feature","data":"Feature: Delivery Location Feature\r\n    \r\n    Background:\r\n     Given user is on home page\r\n    \r\n    @smoke   \r\n    Scenario Outline: valid location pincode\r\n    And user clicked on location update button\r\n    When user entered pincode \"\u003cpincode\u003e\"\r\n    Then location updated to \"\u003cpincode\u003e\"\r\n    \r\n    Examples: \r\n      | pincode\t|      \r\n      | 226010  |\r\n      | 226012  |\r\n    \r\n     \r\n    Scenario Outline: invalid location pincode \r\n    And user clicked on location update button\r\n    When user entered pincode \"\u003cpincode\u003e\"\r\n    Then location not get updated    \r\n    \r\n    Examples: \r\n      | pincode\t|      \r\n      | 22601s  |\r\n      | 43fd    |","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/DeliveryLocationFeature.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Delivery Location Feature","children":[{"background":{"location":{"line":3,"column":5},"keyword":"Background","steps":[{"location":{"line":4,"column":6},"keyword":"Given ","text":"user is on home page","id":"555e9615-9e74-4ae5-9f36-731a2a23d6cc"}],"id":"fbc1a9a4-2694-472e-8db7-62d679a23f08"}},{"scenario":{"location":{"line":7,"column":5},"tags":[{"location":{"line":6,"column":5},"name":"@smoke","id":"ef32800b-7396-434a-91f7-495cba0d44b8"}],"keyword":"Scenario Outline","name":"valid location pincode","steps":[{"location":{"line":8,"column":5},"keyword":"And ","text":"user clicked on location update button","id":"63c14468-fc9d-4900-aeb3-61e31d75ff92"},{"location":{"line":9,"column":5},"keyword":"When ","text":"user entered pincode \"\u003cpincode\u003e\"","id":"3702256b-96d7-455d-a4a6-42db411132ed"},{"location":{"line":10,"column":5},"keyword":"Then ","text":"location updated to \"\u003cpincode\u003e\"","id":"0d2963ad-7544-48cc-8804-e0f4b75abb50"}],"examples":[{"location":{"line":12,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":13,"column":7},"cells":[{"location":{"line":13,"column":9},"value":"pincode"}],"id":"1b6a849d-f9d8-4dd3-aa82-2db2c38a97cc"},"tableBody":[{"location":{"line":14,"column":7},"cells":[{"location":{"line":14,"column":9},"value":"226010"}],"id":"74a213be-d646-4f14-b11e-1513694108b1"},{"location":{"line":15,"column":7},"cells":[{"location":{"line":15,"column":9},"value":"226012"}],"id":"c73140a1-101a-4bca-86fa-a643b28dae90"}],"id":"f543aa1f-81ef-495c-a743-0ed20db535b2"}],"id":"810e4e82-7149-44c3-9caa-be5859d909b8"}},{"scenario":{"location":{"line":18,"column":5},"keyword":"Scenario Outline","name":"invalid location pincode","steps":[{"location":{"line":19,"column":5},"keyword":"And ","text":"user clicked on location update button","id":"93574659-0562-47f0-b7dd-8259498b0299"},{"location":{"line":20,"column":5},"keyword":"When ","text":"user entered pincode \"\u003cpincode\u003e\"","id":"278f1e54-e09a-48ed-b717-7db0ca6e0c98"},{"location":{"line":21,"column":5},"keyword":"Then ","text":"location not get updated","id":"6926eb75-2842-42d2-90e1-780f97a71706"}],"examples":[{"location":{"line":23,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":24,"column":7},"cells":[{"location":{"line":24,"column":9},"value":"pincode"}],"id":"64684a5f-0ab6-4b93-85e7-e6d64e694542"},"tableBody":[{"location":{"line":25,"column":7},"cells":[{"location":{"line":25,"column":9},"value":"22601s"}],"id":"af49d285-de75-4f12-85f8-06d6d947d3d4"},{"location":{"line":26,"column":7},"cells":[{"location":{"line":26,"column":9},"value":"43fd"}],"id":"2b847ce3-d1e0-4ed8-b293-62cb8782d1cb"}],"id":"c29c9bfe-dc2a-4eea-ac76-f8830c24afb6"}],"id":"f747acbd-e841-4b95-b003-cc1da004905c"}}]}}},{"pickle":{"id":"09dd18b5-5cc7-40b6-8cc0-d5398aa7ed31","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/DeliveryLocationFeature.feature","name":"valid location pincode","language":"en","steps":[{"text":"user is on home page","id":"7ff2a278-926e-4129-9052-ffa2b2fe4b4b","astNodeIds":["555e9615-9e74-4ae5-9f36-731a2a23d6cc"]},{"text":"user clicked on location update button","id":"a3ce3c9a-239d-4dc7-8b46-67a545c077fe","astNodeIds":["63c14468-fc9d-4900-aeb3-61e31d75ff92","74a213be-d646-4f14-b11e-1513694108b1"]},{"text":"user entered pincode \"226010\"","id":"6898d72a-331c-46cb-b045-063a2037c133","astNodeIds":["3702256b-96d7-455d-a4a6-42db411132ed","74a213be-d646-4f14-b11e-1513694108b1"]},{"text":"location updated to \"226010\"","id":"a59f95b1-914d-4e5c-8158-d8a2030371ff","astNodeIds":["0d2963ad-7544-48cc-8804-e0f4b75abb50","74a213be-d646-4f14-b11e-1513694108b1"]}],"tags":[{"name":"@smoke","astNodeId":"ef32800b-7396-434a-91f7-495cba0d44b8"}],"astNodeIds":["810e4e82-7149-44c3-9caa-be5859d909b8","74a213be-d646-4f14-b11e-1513694108b1"]}},{"pickle":{"id":"cb0212a2-5ea3-40ee-b4f4-9b8584a8c6da","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/DeliveryLocationFeature.feature","name":"valid location pincode","language":"en","steps":[{"text":"user is on home page","id":"cad47fa4-01e2-44fe-91ee-78ffc8bb332d","astNodeIds":["555e9615-9e74-4ae5-9f36-731a2a23d6cc"]},{"text":"user clicked on location update button","id":"48772770-a609-4004-a547-d5b00af5079a","astNodeIds":["63c14468-fc9d-4900-aeb3-61e31d75ff92","c73140a1-101a-4bca-86fa-a643b28dae90"]},{"text":"user entered pincode \"226012\"","id":"5532a641-0d31-4b62-b614-406876af9365","astNodeIds":["3702256b-96d7-455d-a4a6-42db411132ed","c73140a1-101a-4bca-86fa-a643b28dae90"]},{"text":"location updated to \"226012\"","id":"f5c53288-ffe9-4766-ac70-04e344589bd4","astNodeIds":["0d2963ad-7544-48cc-8804-e0f4b75abb50","c73140a1-101a-4bca-86fa-a643b28dae90"]}],"tags":[{"name":"@smoke","astNodeId":"ef32800b-7396-434a-91f7-495cba0d44b8"}],"astNodeIds":["810e4e82-7149-44c3-9caa-be5859d909b8","c73140a1-101a-4bca-86fa-a643b28dae90"]}},{"pickle":{"id":"7f9e37ee-0894-4fbc-a9b2-fae6ea9e21dc","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/DeliveryLocationFeature.feature","name":"invalid location pincode","language":"en","steps":[{"text":"user is on home page","id":"c2549816-c871-49b8-83c4-f51903a6423b","astNodeIds":["555e9615-9e74-4ae5-9f36-731a2a23d6cc"]},{"text":"user clicked on location update button","id":"efd190ee-fe73-4b38-8b55-29682513ca94","astNodeIds":["93574659-0562-47f0-b7dd-8259498b0299","af49d285-de75-4f12-85f8-06d6d947d3d4"]},{"text":"user entered pincode \"22601s\"","id":"2c8a0e0e-dbc1-4c61-904b-39aba1122cad","astNodeIds":["278f1e54-e09a-48ed-b717-7db0ca6e0c98","af49d285-de75-4f12-85f8-06d6d947d3d4"]},{"text":"location not get updated","id":"deb410ab-5060-4501-8486-21b7352d2f0c","astNodeIds":["6926eb75-2842-42d2-90e1-780f97a71706","af49d285-de75-4f12-85f8-06d6d947d3d4"]}],"astNodeIds":["f747acbd-e841-4b95-b003-cc1da004905c","af49d285-de75-4f12-85f8-06d6d947d3d4"]}},{"pickle":{"id":"b885fd23-27ca-4f22-a40d-8825e00ce2df","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/DeliveryLocationFeature.feature","name":"invalid location pincode","language":"en","steps":[{"text":"user is on home page","id":"6d7f3d99-508e-4f61-8ff1-342a661855bf","astNodeIds":["555e9615-9e74-4ae5-9f36-731a2a23d6cc"]},{"text":"user clicked on location update button","id":"2318e428-0b4a-400e-a239-7294ed86183c","astNodeIds":["93574659-0562-47f0-b7dd-8259498b0299","2b847ce3-d1e0-4ed8-b293-62cb8782d1cb"]},{"text":"user entered pincode \"43fd\"","id":"d8e66eca-1529-47c0-be73-09d583ce2abf","astNodeIds":["278f1e54-e09a-48ed-b717-7db0ca6e0c98","2b847ce3-d1e0-4ed8-b293-62cb8782d1cb"]},{"text":"location not get updated","id":"4b553b56-89e2-43e8-9b75-3693fa0946f9","astNodeIds":["6926eb75-2842-42d2-90e1-780f97a71706","2b847ce3-d1e0-4ed8-b293-62cb8782d1cb"]}],"astNodeIds":["f747acbd-e841-4b95-b003-cc1da004905c","2b847ce3-d1e0-4ed8-b293-62cb8782d1cb"]}},{"source":{"uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/LoginFeature.feature","data":"Feature: Login Functionality\r\n  \r\n  Background: \r\n     Given user is on Login Page\r\n\t\r\n\t@login\r\n\tScenario Outline: Valid Login\r\n\t\tWhen user entered username \"\u003cEmail\u003e\"\r\n\t\tWhen user entered password \"\u003cPassword\u003e\"\r\n\t\tThen user moves to puzzle solve page\r\n\t\tExamples:\r\n\t\t|Email|Password|\r\n\t\t|user@test.com|accjnscn|\r\n\t\t|user2@test.com|dsdffafs|\r\n\t\t\r\n\t\t\r\n\t\t\r\n\tScenario Outline: Invalid Login\r\n\t    When user entered username \"\u003cUsername\u003e\"\r\n\t\tThen user gets invalid credential error\r\n\t\tExamples:\r\n\t\t|Username|\r\n\t\t|testtest.com|\r\n\t\t|test2@test|\r\n\t\t\r\n\t\t\r\n\t","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/LoginFeature.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Login Functionality","children":[{"background":{"location":{"line":3,"column":3},"keyword":"Background","steps":[{"location":{"line":4,"column":6},"keyword":"Given ","text":"user is on Login Page","id":"b12c2327-a257-48f1-b90b-3a1cbf024bd7"}],"id":"274f82e8-3572-4589-a01c-4aabc23ba088"}},{"scenario":{"location":{"line":7,"column":2},"tags":[{"location":{"line":6,"column":2},"name":"@login","id":"b4381d74-a2d3-4df6-890d-ab3cc8377e86"}],"keyword":"Scenario Outline","name":"Valid Login","steps":[{"location":{"line":8,"column":3},"keyword":"When ","text":"user entered username \"\u003cEmail\u003e\"","id":"9e32ef21-0acf-4825-8640-3aeed113b085"},{"location":{"line":9,"column":3},"keyword":"When ","text":"user entered password \"\u003cPassword\u003e\"","id":"1e71b6cd-b5a0-4659-bd05-c497df88113f"},{"location":{"line":10,"column":3},"keyword":"Then ","text":"user moves to puzzle solve page","id":"c4b2ff60-c04d-4106-a582-38a746372b80"}],"examples":[{"location":{"line":11,"column":3},"keyword":"Examples","tableHeader":{"location":{"line":12,"column":3},"cells":[{"location":{"line":12,"column":4},"value":"Email"},{"location":{"line":12,"column":10},"value":"Password"}],"id":"24a16e73-9b4e-4e92-a98f-2c6ebfb61e6f"},"tableBody":[{"location":{"line":13,"column":3},"cells":[{"location":{"line":13,"column":4},"value":"user@test.com"},{"location":{"line":13,"column":18},"value":"accjnscn"}],"id":"f9d1a782-86b7-4445-be90-a38bbce57ea4"},{"location":{"line":14,"column":3},"cells":[{"location":{"line":14,"column":4},"value":"user2@test.com"},{"location":{"line":14,"column":19},"value":"dsdffafs"}],"id":"40baa119-05d6-4eaf-86c2-fc454c659c81"}],"id":"e0fbdf11-bdeb-425f-8fad-e19f8f2176eb"}],"id":"c7ef5c49-08f4-4c99-bd56-a64b92156ffb"}},{"scenario":{"location":{"line":18,"column":2},"keyword":"Scenario Outline","name":"Invalid Login","steps":[{"location":{"line":19,"column":6},"keyword":"When ","text":"user entered username \"\u003cUsername\u003e\"","id":"4f732f3c-7828-4523-994f-7fff80c270c1"},{"location":{"line":20,"column":3},"keyword":"Then ","text":"user gets invalid credential error","id":"d7f41620-17bf-434a-9f6a-dab360a1a6cb"}],"examples":[{"location":{"line":21,"column":3},"keyword":"Examples","tableHeader":{"location":{"line":22,"column":3},"cells":[{"location":{"line":22,"column":4},"value":"Username"}],"id":"6da17d35-dc43-45d6-958a-c1fa919b5db3"},"tableBody":[{"location":{"line":23,"column":3},"cells":[{"location":{"line":23,"column":4},"value":"testtest.com"}],"id":"d018ce77-ade3-44fc-945a-56a0320ecf78"},{"location":{"line":24,"column":3},"cells":[{"location":{"line":24,"column":4},"value":"test2@test"}],"id":"5ee8da3b-f4fa-49b6-9894-17d0852fcab3"}],"id":"98946675-1aea-453c-b458-61bde3cbdf85"}],"id":"ee25d836-48d1-486e-86c8-f35ce3156a00"}}]}}},{"pickle":{"id":"0aef3292-9373-4fef-b091-9854d0d8e717","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/LoginFeature.feature","name":"Valid Login","language":"en","steps":[{"text":"user is on Login Page","id":"1e809add-8739-4464-98eb-2902f008e968","astNodeIds":["b12c2327-a257-48f1-b90b-3a1cbf024bd7"]},{"text":"user entered username \"user@test.com\"","id":"7c6cd631-43ec-44ad-9b66-3e3f2b4af786","astNodeIds":["9e32ef21-0acf-4825-8640-3aeed113b085","f9d1a782-86b7-4445-be90-a38bbce57ea4"]},{"text":"user entered password \"accjnscn\"","id":"94fd09c5-5215-48c6-9ebc-7c18d8ed2796","astNodeIds":["1e71b6cd-b5a0-4659-bd05-c497df88113f","f9d1a782-86b7-4445-be90-a38bbce57ea4"]},{"text":"user moves to puzzle solve page","id":"003b7a50-c315-46b6-9459-7e439c245312","astNodeIds":["c4b2ff60-c04d-4106-a582-38a746372b80","f9d1a782-86b7-4445-be90-a38bbce57ea4"]}],"tags":[{"name":"@login","astNodeId":"b4381d74-a2d3-4df6-890d-ab3cc8377e86"}],"astNodeIds":["c7ef5c49-08f4-4c99-bd56-a64b92156ffb","f9d1a782-86b7-4445-be90-a38bbce57ea4"]}},{"pickle":{"id":"4312cb9c-83aa-4025-b01c-8301f17235d5","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/LoginFeature.feature","name":"Valid Login","language":"en","steps":[{"text":"user is on Login Page","id":"1683f3c2-4122-497c-89ce-7d4be8fb1d93","astNodeIds":["b12c2327-a257-48f1-b90b-3a1cbf024bd7"]},{"text":"user entered username \"user2@test.com\"","id":"e58e4e74-3e37-4f3b-8b95-7b80df83b363","astNodeIds":["9e32ef21-0acf-4825-8640-3aeed113b085","40baa119-05d6-4eaf-86c2-fc454c659c81"]},{"text":"user entered password \"dsdffafs\"","id":"82693a89-29f0-4ed5-87a0-1f50ad28b7b4","astNodeIds":["1e71b6cd-b5a0-4659-bd05-c497df88113f","40baa119-05d6-4eaf-86c2-fc454c659c81"]},{"text":"user moves to puzzle solve page","id":"60915ef3-ee13-4fab-9565-1c2170b788e7","astNodeIds":["c4b2ff60-c04d-4106-a582-38a746372b80","40baa119-05d6-4eaf-86c2-fc454c659c81"]}],"tags":[{"name":"@login","astNodeId":"b4381d74-a2d3-4df6-890d-ab3cc8377e86"}],"astNodeIds":["c7ef5c49-08f4-4c99-bd56-a64b92156ffb","40baa119-05d6-4eaf-86c2-fc454c659c81"]}},{"pickle":{"id":"d3abe252-c3a0-485c-863e-7c2439d3d77d","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/LoginFeature.feature","name":"Invalid Login","language":"en","steps":[{"text":"user is on Login Page","id":"a9c7cd69-f949-4250-b444-8f2236be678d","astNodeIds":["b12c2327-a257-48f1-b90b-3a1cbf024bd7"]},{"text":"user entered username \"testtest.com\"","id":"4a1ea153-e46c-4925-af76-3e69d898943b","astNodeIds":["4f732f3c-7828-4523-994f-7fff80c270c1","d018ce77-ade3-44fc-945a-56a0320ecf78"]},{"text":"user gets invalid credential error","id":"794f9469-ca7d-4b05-a9fe-329a77d3d9a7","astNodeIds":["d7f41620-17bf-434a-9f6a-dab360a1a6cb","d018ce77-ade3-44fc-945a-56a0320ecf78"]}],"astNodeIds":["ee25d836-48d1-486e-86c8-f35ce3156a00","d018ce77-ade3-44fc-945a-56a0320ecf78"]}},{"pickle":{"id":"d4a237da-0c16-40d2-ad36-0b5f97b4c809","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/LoginFeature.feature","name":"Invalid Login","language":"en","steps":[{"text":"user is on Login Page","id":"add8e99c-e9be-43bf-bd67-9f7df492f66f","astNodeIds":["b12c2327-a257-48f1-b90b-3a1cbf024bd7"]},{"text":"user entered username \"test2@test\"","id":"95dfdad6-6a66-4769-b157-8b02110e3b1d","astNodeIds":["4f732f3c-7828-4523-994f-7fff80c270c1","5ee8da3b-f4fa-49b6-9894-17d0852fcab3"]},{"text":"user gets invalid credential error","id":"682c1ff9-5ee3-4c61-8f9e-c8b185f0d13d","astNodeIds":["d7f41620-17bf-434a-9f6a-dab360a1a6cb","5ee8da3b-f4fa-49b6-9894-17d0852fcab3"]}],"astNodeIds":["ee25d836-48d1-486e-86c8-f35ce3156a00","5ee8da3b-f4fa-49b6-9894-17d0852fcab3"]}},{"source":{"uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/SearchProductFeature.feature","data":"Feature: Search Product Feature\r\n \r\n \r\n  Scenario Outline: searched for valid product \r\n   Given user should be on homepage\r\n    When user searches for \"\u003cProduct\u003e\"\r\n    Then search result should display\r\n    \r\n    Examples: \r\n      | Product\t|\r\n      | Air Conditioner\t|   \r\n      | laptop\t| \r\n      \r\n  @regression\r\n   Scenario Outline: searched for  invalid product \r\n    Given user should be on homepage\r\n    When user searches for \"\u003cProduct\u003e\"\r\n    Then search result should not display\r\n    \r\n    Examples: \r\n      | Product\t|\r\n      | sja382h\t|   \r\n      | dsa19j3 |    \r\n\r\n  ","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/SearchProductFeature.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Search Product Feature","children":[{"scenario":{"location":{"line":4,"column":3},"keyword":"Scenario Outline","name":"searched for valid product","steps":[{"location":{"line":5,"column":4},"keyword":"Given ","text":"user should be on homepage","id":"bf80281d-5cd4-462c-bf3f-6b047a315e91"},{"location":{"line":6,"column":5},"keyword":"When ","text":"user searches for \"\u003cProduct\u003e\"","id":"cab41667-0c1d-4d3c-a798-3e8fac0fe136"},{"location":{"line":7,"column":5},"keyword":"Then ","text":"search result should display","id":"ce9e812e-a9c7-4574-84ae-7c680eea5dc7"}],"examples":[{"location":{"line":9,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":10,"column":7},"cells":[{"location":{"line":10,"column":9},"value":"Product"}],"id":"e347b89a-050f-4b2d-9035-4e7198878f44"},"tableBody":[{"location":{"line":11,"column":7},"cells":[{"location":{"line":11,"column":9},"value":"Air Conditioner"}],"id":"ac693bd3-415b-4ce4-9f0f-3654dc333eee"},{"location":{"line":12,"column":7},"cells":[{"location":{"line":12,"column":9},"value":"laptop"}],"id":"1d8e397e-ea75-4cf2-a346-4eb3f9ad2423"}],"id":"93d15521-be74-47f3-b2da-b7a880761109"}],"id":"23840c91-985e-4293-b505-0af954a8d359"}},{"scenario":{"location":{"line":15,"column":4},"tags":[{"location":{"line":14,"column":3},"name":"@regression","id":"3dae0ecb-7b2f-422f-9680-e9f63b924563"}],"keyword":"Scenario Outline","name":"searched for  invalid product","steps":[{"location":{"line":16,"column":5},"keyword":"Given ","text":"user should be on homepage","id":"4c632006-309d-4d69-826f-88021c846a81"},{"location":{"line":17,"column":5},"keyword":"When ","text":"user searches for \"\u003cProduct\u003e\"","id":"0d5e7946-ba32-4122-8130-8c1c9b331274"},{"location":{"line":18,"column":5},"keyword":"Then ","text":"search result should not display","id":"9d9f04a0-49fd-4a9c-b8c1-fb17883a5f4a"}],"examples":[{"location":{"line":20,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":21,"column":7},"cells":[{"location":{"line":21,"column":9},"value":"Product"}],"id":"f73edbf7-697a-4a17-bdbd-b1951c49e71c"},"tableBody":[{"location":{"line":22,"column":7},"cells":[{"location":{"line":22,"column":9},"value":"sja382h"}],"id":"8b8fcc89-71f3-4f7d-afcc-669c91830eac"},{"location":{"line":23,"column":7},"cells":[{"location":{"line":23,"column":9},"value":"dsa19j3"}],"id":"399f3c19-8c4d-4b0b-b7f8-16568680557d"}],"id":"38b59070-2d5f-405c-9b02-1570245d542c"}],"id":"9d7f449a-baeb-48f8-a942-ced46e232e3f"}}]}}},{"pickle":{"id":"674b14f3-b44d-42b0-a58f-6ccf46949f37","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/SearchProductFeature.feature","name":"searched for valid product","language":"en","steps":[{"text":"user should be on homepage","id":"04c816ba-059d-4d1f-99bd-d59774f0f8c6","astNodeIds":["bf80281d-5cd4-462c-bf3f-6b047a315e91","ac693bd3-415b-4ce4-9f0f-3654dc333eee"]},{"text":"user searches for \"Air Conditioner\"","id":"5377df21-255f-4379-b30b-26049b598421","astNodeIds":["cab41667-0c1d-4d3c-a798-3e8fac0fe136","ac693bd3-415b-4ce4-9f0f-3654dc333eee"]},{"text":"search result should display","id":"e1ad3cbd-0da2-4c59-9243-b10e0fbe88ea","astNodeIds":["ce9e812e-a9c7-4574-84ae-7c680eea5dc7","ac693bd3-415b-4ce4-9f0f-3654dc333eee"]}],"astNodeIds":["23840c91-985e-4293-b505-0af954a8d359","ac693bd3-415b-4ce4-9f0f-3654dc333eee"]}},{"pickle":{"id":"2b9a2fc5-6439-4125-9ece-6ca64c2ccca1","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/SearchProductFeature.feature","name":"searched for valid product","language":"en","steps":[{"text":"user should be on homepage","id":"2cd2c42b-cb78-4010-9d12-c7d8a3fd70d6","astNodeIds":["bf80281d-5cd4-462c-bf3f-6b047a315e91","1d8e397e-ea75-4cf2-a346-4eb3f9ad2423"]},{"text":"user searches for \"laptop\"","id":"f372a0f7-7f94-4617-b846-4f74312efddd","astNodeIds":["cab41667-0c1d-4d3c-a798-3e8fac0fe136","1d8e397e-ea75-4cf2-a346-4eb3f9ad2423"]},{"text":"search result should display","id":"2620e199-66f4-4f5e-9670-4accd45019e2","astNodeIds":["ce9e812e-a9c7-4574-84ae-7c680eea5dc7","1d8e397e-ea75-4cf2-a346-4eb3f9ad2423"]}],"astNodeIds":["23840c91-985e-4293-b505-0af954a8d359","1d8e397e-ea75-4cf2-a346-4eb3f9ad2423"]}},{"pickle":{"id":"0782ab21-ee40-4bcb-b4fd-b61338cc3790","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/SearchProductFeature.feature","name":"searched for  invalid product","language":"en","steps":[{"text":"user should be on homepage","id":"b889cc59-07aa-4cb4-b9f2-04001ea1cb26","astNodeIds":["4c632006-309d-4d69-826f-88021c846a81","8b8fcc89-71f3-4f7d-afcc-669c91830eac"]},{"text":"user searches for \"sja382h\"","id":"c514a80f-bcb2-411c-ae65-3b255030807e","astNodeIds":["0d5e7946-ba32-4122-8130-8c1c9b331274","8b8fcc89-71f3-4f7d-afcc-669c91830eac"]},{"text":"search result should not display","id":"a2a1ac64-a7f6-4d2d-a33a-76531b337202","astNodeIds":["9d9f04a0-49fd-4a9c-b8c1-fb17883a5f4a","8b8fcc89-71f3-4f7d-afcc-669c91830eac"]}],"tags":[{"name":"@regression","astNodeId":"3dae0ecb-7b2f-422f-9680-e9f63b924563"}],"astNodeIds":["9d7f449a-baeb-48f8-a942-ced46e232e3f","8b8fcc89-71f3-4f7d-afcc-669c91830eac"]}},{"pickle":{"id":"3f905480-f3ab-4f60-afe0-82d429ae3cb7","uri":"file:///C:/Users/kuldeepmishra/eclipse-workspace23/cucumberSpec/src/test/java/cucumberSpec/features/SearchProductFeature.feature","name":"searched for  invalid product","language":"en","steps":[{"text":"user should be on homepage","id":"82fa65d8-f431-4888-a3f6-25f3b555597c","astNodeIds":["4c632006-309d-4d69-826f-88021c846a81","399f3c19-8c4d-4b0b-b7f8-16568680557d"]},{"text":"user searches for \"dsa19j3\"","id":"74260857-1c94-4fa8-a2ad-16a2d9befb7c","astNodeIds":["0d5e7946-ba32-4122-8130-8c1c9b331274","399f3c19-8c4d-4b0b-b7f8-16568680557d"]},{"text":"search result should not display","id":"ae2d61b8-a94a-40d0-8b58-f872ecbc371b","astNodeIds":["9d9f04a0-49fd-4a9c-b8c1-fb17883a5f4a","399f3c19-8c4d-4b0b-b7f8-16568680557d"]}],"tags":[{"name":"@regression","astNodeId":"3dae0ecb-7b2f-422f-9680-e9f63b924563"}],"astNodeIds":["9d7f449a-baeb-48f8-a942-ced46e232e3f","399f3c19-8c4d-4b0b-b7f8-16568680557d"]}},{"testCase":{"id":"61cb13c5-e94e-49e7-872d-4da5b4787437","pickleId":"0aef3292-9373-4fef-b091-9854d0d8e717","testSteps":[{"id":"6b5cf531-d100-42b7-bd91-4553eef7bad2","hookId":"eb0e4fef-dd7b-4c2f-9916-26c995a4fd6a"},{"id":"ce722632-c58a-4c70-aa4a-7bdbf366e404","pickleStepId":"1e809add-8739-4464-98eb-2902f008e968","stepDefinitionIds":["3622892a-2d12-463a-8ae3-fe7aed92500b"],"stepMatchArgumentsLists":[{}]},{"id":"8107f2db-a4a3-464f-a5f3-0e0a837372fb","pickleStepId":"7c6cd631-43ec-44ad-9b66-3e3f2b4af786","stepDefinitionIds":["1ed5bdef-209d-4e5f-a143-a3c5d8222b52"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"anonymous","group":{"start":23,"value":"user@test.com"}}]}]},{"id":"e1ea399c-9d3b-409e-bd2e-a0788fb10db2","pickleStepId":"94fd09c5-5215-48c6-9ebc-7c18d8ed2796","stepDefinitionIds":["a0c0cedd-172e-4f1a-8321-77408ccd8c1c"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":22,"value":"\"accjnscn\"","children":[{"start":23,"value":"accjnscn","children":[{}]},{"children":[{}]}]}}]}]},{"id":"cf066ad8-0e3e-4794-88bd-ffc22278116c","pickleStepId":"003b7a50-c315-46b6-9459-7e439c245312","stepDefinitionIds":["77963662-7447-42df-b3a7-c63e4c566f6f"],"stepMatchArgumentsLists":[{}]},{"id":"01469622-06ec-45a4-b2ee-ed79a2b924d6","hookId":"ba802d8e-8c19-4e94-9654-4b2890dfbf70"}]}},{"testCaseStarted":{"timestamp":{"seconds":"1715078018","nanos":857545600},"testCaseId":"61cb13c5-e94e-49e7-872d-4da5b4787437","id":"b976dd9b-0136-4bd4-b114-443be372f70b"}},{"testStepStarted":{"timestamp":{"seconds":"1715078018","nanos":863628700},"testStepId":"6b5cf531-d100-42b7-bd91-4553eef7bad2","testCaseStartedId":"b976dd9b-0136-4bd4-b114-443be372f70b"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"33","nanos":215981800}},"timestamp":{"seconds":"1715078052","nanos":79610500},"testStepId":"6b5cf531-d100-42b7-bd91-4553eef7bad2","testCaseStartedId":"b976dd9b-0136-4bd4-b114-443be372f70b"}},{"testStepStarted":{"timestamp":{"seconds":"1715078052","nanos":105321100},"testStepId":"ce722632-c58a-4c70-aa4a-7bdbf366e404","testCaseStartedId":"b976dd9b-0136-4bd4-b114-443be372f70b"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"5","nanos":977699200}},"timestam
